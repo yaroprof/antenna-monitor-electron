@@ -1,0 +1,20 @@
+image: Visual Studio 2022
+
+platform: x64
+
+build: off
+
+cache:
+  - node_modules -> package-lock.json
+
+install:
+  - node --version
+  - npm --version
+  - npm install
+
+build_script:
+  - npm run build:win
+
+artifacts:
+  - path: dist\*.exe
+    name: AntennaMonitorSetup
